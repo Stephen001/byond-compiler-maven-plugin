@@ -1,18 +1,81 @@
-<project>
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+	http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.awesomeware.byond</groupId>
-  <artifactId>byond-compiler-maven-plugin</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
-  <packaging>maven-plugin</packaging>
+	<groupId>com.awesomeware.byond</groupId>
+	<artifactId>byond-compiler-maven-plugin</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>maven-plugin</packaging>
 
-  <name>BYOND Compiler Maven Plugin</name>
+	<name>BYOND Compiler Maven Plugin</name>
+	<description>A plugin that allows you to compile BYOND code and resources, and produce DMBs.</description>
+	<inceptionYear>2013</inceptionYear>
+	<properties>
+		<scm.branch>master</scm.branch>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 
-  <dependencies>
-    <dependency>
-      <groupId>org.apache.maven</groupId>
-      <artifactId>maven-plugin-api</artifactId>
-      <version>3.0</version>
-    </dependency>
-  </dependencies>
+	<scm>
+		<url>https://github.com/Stephen001/byond-compiler-maven-plugin</url>
+		<connection>scm:git:git://github.com/stephen001/byond-compiler-maven-plugin.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/stephen001/byond-compiler-maven-plugin.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+
+	<issueManagement>
+		<system>Github Issue Tracking</system>
+		<url>https://github.com/Stephen001/byond-compiler-maven-plugin/issues</url>
+	</issueManagement>
+	
+	<ciManagement>
+        <system>Jenkins</system>
+        <url>http://awesomeware.org/jenkins/view/Awesomeware/job/byond-compiler-maven-plugin/</url>
+    </ciManagement>
+	
+	<licenses>
+        <license>
+            <name>Apache 2.0</name>
+            <url>LICENSE.txt</url>
+        </license>
+    </licenses>
+    
+    <developers>
+        <developer>
+        	<id>Stephen001</id>
+            <name>Stephen Badger</name>
+            <email>stephen.badger@gmail.com</email>
+            <organization>BYOND</organization>
+            <organizationUrl>http://www.byond.com/</organizationUrl>
+            <timezone>0</timezone>
+            <roles>
+                <role>Developer</role>
+            </roles>
+        </developer>
+    </developers>
+	
+	<prerequisites>
+        <maven>[3.0.0,)</maven>
+    </prerequisites>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-plugin-api</artifactId>
+			<version>3.0</version>
+		</dependency>
+	</dependencies>
+	
+	<distributionManagement>
+        <repository>
+            <id>com.awesomeware.byond.releases</id>
+            <name>BYOND Maven Releases</name>
+            <url>http://awesomeware.org/nexus/content/repositories/byond-maven-releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>com.awesomeware.byond.snapshots</id>
+            <name>BYOND Maven Snapshots</name>
+            <url>http://awesomeware.org/nexus/content/repositories/byond-maven-snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
