@@ -27,55 +27,72 @@
 		<system>Github Issue Tracking</system>
 		<url>https://github.com/Stephen001/byond-compiler-maven-plugin/issues</url>
 	</issueManagement>
-	
+
 	<ciManagement>
-        <system>Jenkins</system>
-        <url>http://awesomeware.org/jenkins/view/Awesomeware/job/byond-compiler-maven-plugin/</url>
-    </ciManagement>
-	
+		<system>Jenkins</system>
+		<url>http://awesomeware.org/jenkins/view/Awesomeware/job/byond-compiler-maven-plugin/</url>
+	</ciManagement>
+
 	<licenses>
-        <license>
-            <name>Apache 2.0</name>
-            <url>LICENSE.txt</url>
-        </license>
-    </licenses>
-    
-    <developers>
-        <developer>
-        	<id>Stephen001</id>
-            <name>Stephen Badger</name>
-            <email>stephen.badger@gmail.com</email>
-            <organization>BYOND</organization>
-            <organizationUrl>http://www.byond.com/</organizationUrl>
-            <timezone>0</timezone>
-            <roles>
-                <role>Developer</role>
-            </roles>
-        </developer>
-    </developers>
-	
+		<license>
+			<name>Apache 2.0</name>
+			<url>LICENSE.txt</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<id>Stephen001</id>
+			<name>Stephen Badger</name>
+			<email>stephen.badger@gmail.com</email>
+			<organization>BYOND</organization>
+			<organizationUrl>http://www.byond.com/</organizationUrl>
+			<timezone>0</timezone>
+			<roles>
+				<role>Developer</role>
+			</roles>
+		</developer>
+	</developers>
+
 	<prerequisites>
-        <maven>[3.0.0,)</maven>
-    </prerequisites>
-	
+		<maven>[3.0.0,)</maven>
+	</prerequisites>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.maven</groupId>
 			<artifactId>maven-plugin-api</artifactId>
 			<version>3.0</version>
+			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.plugin-tools</groupId>
+			<artifactId>maven-plugin-annotations</artifactId>
+			<version>3.2</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-component-annotations</artifactId>
+			<version>1.5.5</version>
+		</dependency>    
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-compiler-api</artifactId>
+			<version>2.2</version>
+		</dependency>    
 	</dependencies>
-	
+
 	<distributionManagement>
-        <repository>
-            <id>com.awesomeware.byond.releases</id>
-            <name>BYOND Maven Releases</name>
-            <url>http://awesomeware.org/nexus/content/repositories/byond-maven-releases</url>
-        </repository>
-        <snapshotRepository>
-            <id>com.awesomeware.byond.snapshots</id>
-            <name>BYOND Maven Snapshots</name>
-            <url>http://awesomeware.org/nexus/content/repositories/byond-maven-snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
+		<repository>
+			<id>com.awesomeware.byond.releases</id>
+			<name>BYOND Maven Releases</name>
+			<url>http://awesomeware.org/nexus/content/repositories/byond-maven-releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>com.awesomeware.byond.snapshots</id>
+			<name>BYOND Maven Snapshots</name>
+			<url>http://awesomeware.org/nexus/content/repositories/byond-maven-snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
 </project>
